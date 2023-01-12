@@ -19,12 +19,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 mongoose.connect(
-  "mongodb+srv://" +
-    process.env.DB_USER +
-    ":" +
-    process.env.DB_PASSWORD +
-    "@cluster0.yao28.mongodb.net/bankDB?retryWrites=true&w=majority" ||
-    "mongodb://localhost:27017/bankDB",
+  "mongodb://" +
+    process.env.DB_USER + ":" + process.env.DB_PASSWORD + "@localhost:27017/bankDB?authSource=admin&w=1",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
