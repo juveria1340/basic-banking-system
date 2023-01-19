@@ -14,6 +14,7 @@ docker run -it --link mongo:mongo --rm mongo mongosh --host mongo -u mongoadmin 
 Use below command to give mongoadmin user access to bankDB
 
 use admin
+
 db.grantRolesToUser('mongoadmin', [{ role: 'readWrite', db: 'bankDB' }]);
 
 ## Installation and Setup Instructions
